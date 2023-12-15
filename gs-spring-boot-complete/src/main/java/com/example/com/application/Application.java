@@ -37,7 +37,7 @@ public class Application
                 Object beanInstance = entry.getValue();
 
                 // 특정 패키지에 속한 빈들만 출력합니다.
-                if (beanInstance.getClass().getPackage().getName().startsWith("com.example"))
+                if (beanInstance.getClass().getPackage().getName().startsWith("com.example."))
                 {
                     logger.info("로그: 빈명: {} ", beanInstance.getClass().getPackage().getName()+ " : " + beanName);
                 }
