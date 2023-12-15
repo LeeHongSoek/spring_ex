@@ -1,4 +1,4 @@
-package com.example.com;
+package com.example.com.application;
 
 import java.util.Map;
 
