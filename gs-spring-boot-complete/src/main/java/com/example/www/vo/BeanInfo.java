@@ -1,4 +1,4 @@
-package com.example.com.vo;
+package com.example.www.vo;
 
 // 추가된 BeanInfo 클래스
 public class BeanInfo
