@@ -49,26 +49,5 @@ public class Application
             }
         };
     }
-    /*
-    @ Bean
-    DataSource dataSource()
-    {
-        logger.info("◇ {} ", getClass().getName());
-        
-         return new DriverManagerDataSource("jdbc:mysql://sql.freedb.tech:3306/freedb_Leehs1181_database", "freedb_lhs0806", "qMVx9Z6QhRgspT&");       
-    }
-    */
 
-    @Bean
-    DataSource dataSource()
-    {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUsername("freedb_lhs0806");
-        dataSource.setPassword("qMVx9Z6QhRgspT&");
-        dataSource.setUrl("jdbc:mysql://sql.freedb.tech:3306/freedb_Leehs1181_database?createDatabaseIfNotExist=true");
-
-        return dataSource;
-    }
 }
