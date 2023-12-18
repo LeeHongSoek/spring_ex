@@ -2,6 +2,8 @@ package com.example.www;
 
 import java.util.Map;
 
+import javax.sql.DataSource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -9,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @SpringBootApplication
 public class Application
@@ -46,4 +49,12 @@ public class Application
 			}
 		};
 	}
+	
+    @Bean
+    DataSource dataSource()
+    {
+        logger.info("로그: {} ", getClass().getName());
+        
+        return new DriverManagerDataSource("jdbc:mysql://sql.freedb.tech:3306/freedb_Leehs1181_database", "freedb_lhs0806", "qMVx9Z6QhRgspT&");
+    }
 }

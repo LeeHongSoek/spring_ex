@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.www.Application;
 import com.example.www.ClassUtils;
 
 @RestController
