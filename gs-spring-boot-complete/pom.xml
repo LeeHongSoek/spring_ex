@@ -70,16 +70,13 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+ 	    <!-- Hibernate JPA 모듈 -->
+	    <!-- 
 
-		 <!-- Hibernate JPA 모듈 -->
 	    <dependency>
 	        <groupId>org.hibernate</groupId>
 	        <artifactId>hibernate-core</artifactId>
-	        <version>5.5.6.Final</version> <!-- 사용하는 Hibernate 버전 -->
+	        <version>5.5.6.Final</version> 
 	    </dependency>
 	    
 	    <dependency>
@@ -88,12 +85,16 @@
 		    <version>5.2.3.Final</version>
 		</dependency>
 	
-	    <!-- 데이터베이스 드라이버 (예: MySQL 사용 시) -->
 	    <dependency>
 	        <groupId>mysql</groupId>
 	        <artifactId>mysql-connector-java</artifactId>
-	        <version>8.0.23</version> <!-- 사용하는 MySQL 드라이버 버전 -->
+	        <version>8.0.23</version> 
 	    </dependency>
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 
 	</dependencies>
 
