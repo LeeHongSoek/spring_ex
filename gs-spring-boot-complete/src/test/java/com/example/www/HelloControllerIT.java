@@ -1,4 +1,4 @@
-package com.example.com;
+package com.example.www;
 
 import org.junit.jupiter.api.Test;
 

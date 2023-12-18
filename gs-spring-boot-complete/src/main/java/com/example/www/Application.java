@@ -28,9 +28,9 @@ public class Application
 		{
 			logger.info("호출클래스: {} ", ClassUtils.getShtClassNm(getClass()));
 
-			logger.info("로그: {} ", "com.example.com 패키지에 있는 빈들을 검사해 보겠습니다.");
+			logger.info("로그: {} ", "com.example.www 패키지에 있는 빈들을 검사해 보겠습니다.");
 
-			// com.example.com 패키지 아래의 모든 빈을 가져옵니다.
+			// com.example.www 패키지 아래의 모든 빈을 가져옵니다.
 			Map<String, Object> beansInPackage = ctx.getBeansOfType(Object.class);
 
 			for (Map.Entry<String, Object> entry : beansInPackage.entrySet())
