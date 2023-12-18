@@ -16,7 +16,7 @@ public class _RootController
     @GetMapping("/")
     public String index()
     {
-    	logger.info("호출클래스: {} ", ClassUtils.getShtClassNm(getClass()));
+    	logger.info("클래스: {} ", ClassUtils.getShtClassNm(getClass()));
     	
     	
         return "Root!!<a href='/showendpoints'>/showendpoints</a>";

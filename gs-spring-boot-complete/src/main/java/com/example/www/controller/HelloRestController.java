@@ -15,7 +15,7 @@ public class HelloRestController
     @GetMapping("/HelloRest")
     public String RestHello()
     {
-    	logger.info("호출클래스: {} ", ClassUtils.getShtClassNm(getClass()));
+    	logger.info("클래스: {} ", ClassUtils.getShtClassNm(getClass()));
     	
         return "Greetings from Spring Boot!";
     }

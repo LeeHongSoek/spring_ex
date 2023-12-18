@@ -29,7 +29,7 @@ public class Application
 	{
 		return args ->
 		{
-			logger.info("호출클래스: {} ", ClassUtils.getShtClassNm(getClass()));
+			logger.info("클래스: {} ", ClassUtils.getShtClassNm(getClass()));
 
 			logger.info("| {} ", "com.example.www 패키지에 있는 빈들을 검사해 보겠습니다.");
 
