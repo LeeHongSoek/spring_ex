@@ -53,7 +53,7 @@ public class ShowInfoController
             
             endpointMap.put(strKey, strValue);
             
-            logger.info("로그: {} : {}", strKey, strValue);
+            logger.info("| {} : {}", strKey, strValue);
         });
 
         model.addAttribute("endpointMap", endpointMap);
