@@ -16,7 +16,7 @@ public class HelloThymeleafController
     @GetMapping(value = "/HelloThymeleaf", produces = "text/html")
     public String hello(Model model)
     {
-    	logger.info("호출클래스: {} ", ClassUtils.getShtClassNm(getClass()));
+    	logger.info("◆ 클래스: {} ", ClassUtils.getShtClassNm(getClass()));
     	
         // 모델에 데이터 추가
         model.addAttribute("message", "Thymeleaf!");

@@ -6,7 +6,7 @@ public class ClassUtils
 	/**
 	 * 패키지+클래스명을 짧게 표현한다..
 	 *
-	 * 예) com.example.www.Application -> c.e.w.Application
+	 * 예) com.example.www.Application -> c.e.w.application
 	 *
 	 * @param clazz
 	 * @return

@@ -70,6 +70,21 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
+ 	    <!-- Hibernate JPA 모듈 -->
+	    <dependency>
+	        <groupId>org.hibernate</groupId>
+	        <artifactId>hibernate-core</artifactId>
+	        <version>6.4.1.Final</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>mysql</groupId>
+	        <artifactId>mysql-connector-java</artifactId>
+	        <version>8.0.23</version> 
+	    </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 
 	</dependencies>
 
