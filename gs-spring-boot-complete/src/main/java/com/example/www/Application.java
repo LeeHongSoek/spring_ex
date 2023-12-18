@@ -44,7 +44,7 @@ public class Application
                 // 특정 패키지에 속한 빈들만 출력합니다.
                 if (beanInstance.getClass().getPackage().getName().startsWith("com.example."))
                 {
-                    logger.info("◇ 빈명: {} ", ClassUtils.getShtClassNm(beanInstance.getClass()) + " : " + beanName);
+                    logger.info("◇ 빈: {} ", ClassUtils.getShtClassNm(beanInstance.getClass()) + " : " + beanName);
                 }
             }
         };
