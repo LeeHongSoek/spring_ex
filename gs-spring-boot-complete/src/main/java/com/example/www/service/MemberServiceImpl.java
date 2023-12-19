@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.www.controller.MemberRepository;
 import com.example.www.vo.Member;
 
 @Service
