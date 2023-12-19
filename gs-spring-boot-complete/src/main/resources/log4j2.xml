@@ -11,8 +11,7 @@
 
 		<!-- File Appender with Rolling -->
 		<!-- log/app-%d{yyyy-MM-dd}-%i.log 이면 압축하지 않고  -->
-		<RollingFile
-		 name="File_log" fileName="log/app_log.log" filePattern="log/app_log-%d{yyyy-MM-dd}-%i.log">
+		<RollingFile name="File_log" fileName="log/app_log.log" filePattern="log/app_log-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout pattern="%-5level %d{HH:mm:ss.SSS} | %70.70logger | %msg%n" />
 			<Policies>
 				<SizeBasedTriggeringPolicy size="1MB" /> <!-- 특정 크기(1MB)에 도달하면 롤링 -->
