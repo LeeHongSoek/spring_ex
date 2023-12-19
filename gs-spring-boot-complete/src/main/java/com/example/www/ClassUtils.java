@@ -37,7 +37,8 @@ public class ClassUtils
 		{
 			String part = parts[i];
 
-			result.append(part.charAt(0) + ".");
+			if (i < 3) result.append(part.charAt(0) + ".");
+			else       result.append(part + ".");
 		}
 
 		return result.toString();
