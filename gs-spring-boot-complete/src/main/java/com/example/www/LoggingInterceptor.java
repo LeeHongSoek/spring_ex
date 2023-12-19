@@ -17,7 +17,7 @@ public class LoggingInterceptor implements HandlerInterceptor
     {
         // 요청이 들어올 때 실행되는 부분
         
-        logger.info("◆       웹요청 | [{}] {} ", request.getMethod(), request.getRequestURI());
+        logger.info("◆ 웹요청        | [{}] {} ", request.getMethod(), request.getRequestURI());
         
         return true;
     }
