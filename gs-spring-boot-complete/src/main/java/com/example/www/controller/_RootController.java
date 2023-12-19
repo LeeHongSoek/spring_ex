@@ -16,7 +16,7 @@ public class _RootController
     @GetMapping("/")
     public String index()
     {
-        logger.info("◆ 클래스: {} ", ClassUtils.getShtClassNm(getClass()));
+        logger.info("◇ 클래스:함수명 | {}:{} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());        
 
         return "_root";
     }
