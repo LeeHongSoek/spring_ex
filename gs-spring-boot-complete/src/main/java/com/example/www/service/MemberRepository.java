@@ -1,4 +1,4 @@
-package com.example.www.controller;
+package com.example.www.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
