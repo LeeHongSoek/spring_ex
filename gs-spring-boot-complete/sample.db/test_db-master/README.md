@@ -148,11 +148,11 @@ http://timecenter.cs.aau.dk/software.htm
 MySQL 데이터베이스 서버(5.0+)가 필요하고 아래 명령을 실행해야 합니다. 
 다음 권한을 가진 사용자:
 
-    선택, 삽입, 업데이트, 삭제, 
-    생성, 삭제, 다시 로드, 참조, 
-    인덱스, 변경, 데이터베이스 표시, 
-    임시 표 만들기, 
-    표 잠금, 실행, 보기 작성
+    SELECT, INSERT, UPDATE, DELETE, 
+    CREATE, DROP, RELOAD, REFERENCES, 
+    INDEX, ALTER, SHOW DATABASES, 
+    CREATE TEMPORARY TABLES, 
+    LOCK TABLES, EXECUTE, CREATE VIEW
 
 ## 설치:
 
@@ -174,46 +174,46 @@ MySQL 데이터베이스 서버(5.0+)가 필요하고 아래 명령을 실행해
 설치 후 다음 중 하나를 실행할 수 있습니다.
 
     mysql -t < test_ employees_md5.sql
-    # 오어
+    # OR
     mysql -t < test_ employees_sha.sql
 
 예:
 
-    mysql -t < test_ employees_md5.sql
+    mysql  -t < test_employees_md5.sql
     +----------------------+
-    | INFO |
+    | INFO                 |
     +----------------------+
-    | 설치 테스트 |
+    | TESTING INSTALLATION |
     +----------------------+
     +--------------+------------------+----------------------------------+
-    | table_name | 예상_records | 예상_crc |
+    | table_name   | expected_records | expected_crc                     |
     +--------------+------------------+----------------------------------+
-    | 직원 | 300024 | 4ec56ab5ba37218d 187cf6ab09ce1aa1 |
-    | 부서 | 9 | d1af5e170d2d1591d776d5638d71fc5f |
-    | dept_매니저 | 24 | 8720e2f0853ac9096b689c 14664f847e |
+    | employees    |           300024 | 4ec56ab5ba37218d187cf6ab09ce1aa1 |
+    | departments  |                9 | d1af5e170d2d1591d776d5638d71fc5f |
+    | dept_manager |               24 | 8720e2f0853ac9096b689c14664f847e |
     | dept_emp     |           331603 | ccf6fe516f990bdaa49713fc478701b7 |
-    | 타이틀 | 443308 | bfa016c472df68e70a03faca1bc0a8 |
-    | 급여 | 2844047 | fd220654e95aea1b169624ffe3fca934 |
+    | titles       |           443308 | bfa016c472df68e70a03facafa1bc0a8 |
+    | salaries     |          2844047 | fd220654e95aea1b169624ffe3fca934 |
     +--------------+------------------+----------------------------------+
     +--------------+------------------+----------------------------------+
-    | table_name | found_ records | found_ crc |
+    | table_name   | found_records    | found_crc                        |
     +--------------+------------------+----------------------------------+
-    | 직원 | 300024 | 4ec56ab5ba37218d 187cf6ab09ce1aa1 |
-    | 부서 | 9 | d1af5e170d2d1591d776d5638d71fc5f |
-    | dept_매니저 | 24 | 8720e2f0853ac9096b689c 14664f847e |
+    | employees    |           300024 | 4ec56ab5ba37218d187cf6ab09ce1aa1 |
+    | departments  |                9 | d1af5e170d2d1591d776d5638d71fc5f |
+    | dept_manager |               24 | 8720e2f0853ac9096b689c14664f847e |
     | dept_emp     |           331603 | ccf6fe516f990bdaa49713fc478701b7 |
-    | 타이틀 | 443308 | bfa016c472df68e70a03faca1bc0a8 |
-    | 급여 | 2844047 | fd220654e95aea1b169624ffe3fca934 |
+    | titles       |           443308 | bfa016c472df68e70a03facafa1bc0a8 |
+    | salaries     |          2844047 | fd220654e95aea1b169624ffe3fca934 |
     +--------------+------------------+----------------------------------+
     +--------------+---------------+-----------+
-    | table_name | records_match | crc_match |
+    | table_name   | records_match | crc_match |
     +--------------+---------------+-----------+
-    | 직원 | OK | OK |
-    | 부서 | OK | OK |
-    | dep_manager | OK | OK |
-    | dep_emp | OK | OK |
-    | 제목 | OK | OK |
-    | 급여 | OK | OK |
+    | employees    | OK            | ok        |
+    | departments  | OK            | ok        |
+    | dept_manager | OK            | ok        |
+    | dept_emp     | OK            | ok        |
+    | titles       | OK            | ok        |
+    | salaries     | OK            | ok        |
     +--------------+---------------+-----------+
 
 
