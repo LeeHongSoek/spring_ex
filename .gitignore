@@ -23,9 +23,14 @@ bin/
 *.tmp
 *.swp
 
+
 # 스프링 부트 애플리케이션 설정 파일
 application*.properties
 application*.yml
 
 # 스프링 부트의 로그 디렉토리
 logs/
+
+#이 파일들은 Mac OS X에서 생성되는 임시 파일입니다. 
+.DS_Store
+
