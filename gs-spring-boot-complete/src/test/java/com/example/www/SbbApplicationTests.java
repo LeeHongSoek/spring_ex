@@ -12,12 +12,10 @@ import com.example.www.repository.QuestionRepository;
 @SpringBootTest
 class SbbApplicationTests
 {
-
     @Autowired
     private QuestionRepository questionRepository;
 
-    @Test
-    
+    @Test    
     void testJpa()
     {
         Question q1 = new Question();

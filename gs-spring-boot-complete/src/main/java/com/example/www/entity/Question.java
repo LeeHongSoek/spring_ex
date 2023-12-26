@@ -7,11 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 public class Question
 {
@@ -29,19 +25,17 @@ public class Question
 
     public void setSubject(String string)
     {
-        // TODO Auto-generated method stub
-        
+        this.subject = string;        
     }
 
     public void setContent(String string)
     {
-        // TODO Auto-generated method stub
-        
+        this.content = string;        
     }
 
     public void setCreateDate(LocalDateTime now)
     {
-        // TODO Auto-generated method stub
+        this.createDate = now;
         
     }
 }

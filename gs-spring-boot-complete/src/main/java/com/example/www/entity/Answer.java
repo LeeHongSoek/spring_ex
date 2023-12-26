@@ -16,7 +16,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Answer {
+public class Answer
+{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
