@@ -2,7 +2,7 @@ package com.example.www.service;
 
 import java.util.List;
 
-import com.example.www.vo.Member;
+import com.example.www.entity.Member;
 
 public interface MemberService
 {
