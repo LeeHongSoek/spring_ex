@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.www.ClassUtils;
+import com.example.www.entity.Member;
 import com.example.www.service.MemberService;
-import com.example.www.vo.Member;
 
 import jakarta.servlet.http.HttpServletRequest;
 

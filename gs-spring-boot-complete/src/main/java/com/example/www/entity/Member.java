@@ -1,4 +1,4 @@
-package com.example.www.vo;
+package com.example.www.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

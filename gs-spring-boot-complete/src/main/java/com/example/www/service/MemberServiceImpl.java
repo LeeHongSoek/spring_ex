@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.www.vo.Member;
+import com.example.www.entity.Member;
+import com.example.www.repository.MemberRepository;
 
 @Service
 public class MemberServiceImpl implements MemberService
