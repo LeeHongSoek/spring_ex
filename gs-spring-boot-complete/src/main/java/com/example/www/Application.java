@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Bean;
 
 //이 어노테이션을 사용하여 MyBatis Mapper 스캔 범위 설정
 @SpringBootApplication
-@MapperScan(basePackages = "com.example.www.mapper")
 public class Application
 {
 

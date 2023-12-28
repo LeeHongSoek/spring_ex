@@ -51,6 +51,15 @@ public class ShowInfoController
         // handlerMapping을 사용하여 endpointMap 채우기
         handlerMapping.getHandlerMethods().forEach((key, value) ->
         {
+                /*
+        String strKey = key.getPatternValues().toString().replaceAll("\\[|\\]", "");
+        String strValue = value.getMethod().toString();
+        String httpMethod = key.getMethodsCondition().getMethods().iterator().next().name();
+
+        // Map에 해당 HTTP 메서드에 대한 정보를 추가
+        endpointMap.computeIfAbsent(strKey, k -> new HashMap<>()).put(httpMethod, strValue);
+ 
+    */
             String strKey = key.getPatternValues().toString().replaceAll("\\[|\\]", "");
             String strValue = value.getMethod().toString();
 

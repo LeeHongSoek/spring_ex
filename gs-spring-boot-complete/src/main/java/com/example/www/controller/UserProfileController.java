@@ -13,14 +13,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.www.mapper.UserProfileMapper;
 import com.example.www.vo.UserProfile;
+/*
+CREATE TABLE `UserProfile` (
+  `id` varchar(64) NOT NULL,
+  `name` varchar(64) DEFAULT NULL,
+  `phone` varchar(64) DEFAULT NULL,
+  `address` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) 
+ * */
 
-
-// @ RestController
+@RestController
 public class UserProfileController
 {
     private UserProfileMapper userProfileMapper;
-    private Map<String, UserProfile> userMap;
-
+    
     public UserProfileController(UserProfileMapper userProfileMapper)
     {
         this.userProfileMapper = userProfileMapper;
