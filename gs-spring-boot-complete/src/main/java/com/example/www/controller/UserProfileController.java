@@ -1,6 +1,5 @@
 package com.example.www.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,7 +15,7 @@ import com.example.www.mapper.UserProfileMapper;
 import com.example.www.vo.UserProfile;
 
 
-@RestController
+// @ RestController
 public class UserProfileController
 {
     private UserProfileMapper userProfileMapper;
