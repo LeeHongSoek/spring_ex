@@ -68,7 +68,7 @@ public class ShowInfoController
         {
             String strKey = entry.getKey();
             String strValue = entry.getValue();
-            
+
             logger.info("◇ {} : {}", strKey, strValue);
         });
 

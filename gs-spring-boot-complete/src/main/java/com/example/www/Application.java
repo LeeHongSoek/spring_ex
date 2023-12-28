@@ -2,8 +2,7 @@ package com.example.www;
 
 import java.util.Map;
 
-import javax.sql.DataSource;
-
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -11,9 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+//이 어노테이션을 사용하여 MyBatis Mapper 스캔 범위 설정
 @SpringBootApplication
+@MapperScan(basePackages = "com.example.www.mapper")
 public class Application
 {
 
