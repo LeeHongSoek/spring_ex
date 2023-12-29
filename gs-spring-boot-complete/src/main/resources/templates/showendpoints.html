@@ -36,16 +36,16 @@
 		<thead>
 			<tr>
 				<th>Endpoint Pattern</th>
-				<th>Handler Method</th>
+				<th>Request Method</th>
+				<th>Request Info</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr th:each="entry : ${endpointMap}">
-				<td>
-				     ＠<a th:href="'http://' + ${baseDomain}+${entry.key}" th:text="${entry.key}"></a>
-				</td>
-				<td th:text="${entry.value}"></td>
-			</tr>
+			<!-- Iterate over the entries -->
+            <tr th:each="endpointArray : ${endpointList}">
+                <!-- Display each item in the endpointArray -->
+                <td th:each="item : ${endpointArray}" th:text="${item}"></td>
+            </tr>
 		</tbody>
 	</table>
 </body>

@@ -36,6 +36,50 @@ public class ShowInfoController
     {
         this.handlerMapping = handlerMapping;
     }
+/*
+    private String formatHandlerMethod(String handlerMethod)
+    {
+        // 클래스명과 함수명 사이의 마지막 '.'를 ':', 괄호 내부의 '.'를 '/'로 대체
+        // handlerMethod = handlerMethod.replaceAll("\\.(?!.*\\))", " : ").replaceAll("\\.(?=[^()]*\\))", " / ");
+        return handlerMethod;
+    }
+  */  
+    private String formatHandlerMethod(String handlerMethod) {
+        // 1. 문장을 분리
+        String[] parts = handlerMethod.split("\\(");
+        String methodSignature = parts[0];
+        String packageSignature = null;
+        String clseeSignature = null;
+        String parameters = parts[1].substring(0, parts[1].lastIndexOf(")"));
+        String[] parameterArray = parameters.split(", ");
+
+        // 2. 클래스명과 함수명 변환
+        int lastDotIndex = methodSignature.lastIndexOf(".");
+        if (lastDotIndex != -1) {
+            methodSignature = methodSignature.substring(0, lastDotIndex) + " : " + methodSignature.substring(lastDotIndex + 1);
+            
+            lastDotIndex = methodSignature.substring(0, lastDotIndex).lastIndexOf(".");
+            if (lastDotIndex != -1) {
+                methodSignature = methodSignature.substring(0, lastDotIndex) + " : " + methodSignature.substring(lastDotIndex + 1);
+
+                packageSignature = null;
+                clseeSignature = null;
+            }
+        }
+
+        // 3. 각 파라미터 변환
+        for (int i = 0; i < parameterArray.length; i++) {
+            int lastDotIndexParam = parameterArray[i].lastIndexOf(".");
+            if (lastDotIndexParam != -1) {
+                parameterArray[i] = parameterArray[i].substring(0, lastDotIndexParam) + " / " + parameterArray[i].substring(lastDotIndexParam + 1);
+            }
+        }
+
+        // 4. 결과 문자열 조합
+        String formattedMethod = methodSignature + "(" + String.join(", ", parameterArray) + ")";
+        return formattedMethod;
+    }
+
 
     @GetMapping("/showendpoints")
     public ModelAndView showEndpoints(Model model, HttpServletRequest request)
@@ -46,42 +90,72 @@ public class ShowInfoController
         String baseDomain = request.getServerName() + ":" + request.getServerPort();
         model.addAttribute("baseDomain", baseDomain);
 
-        Map<String, String> endpointMap = new HashMap<>();
+        List<String[]> endpointList = new ArrayList<>();
+
+        // handlerMapping을 사용하여 endpointList 채우기
+        handlerMapping.getHandlerMethods().forEach((key, value) ->
+        {
+            String strKey = key.getPatternValues().toString().replaceAll("\\[|\\]", "");
+            String strValue = value.getMethod().toString();
+            String requestMethod = key.getMethodsCondition().getMethods().toString();
+
+            // Create an array for each endpoint
+            String[] endpointArray =
+            { strKey, requestMethod, formatHandlerMethod(strValue) };
+            endpointList.add(endpointArray);
+        });
+
+        // Sort the list based on the endpoint pattern (strKey)
+        Collections.sort(endpointList, Comparator.comparing(endpointArray -> endpointArray[0]));
+
+        // Log and print the sorted entries
+        endpointList.forEach(endpointArray -> logger.info("◇ {} : {}, {}: {}", endpointArray[0], endpointArray[1], endpointArray[2]));
+
+        // Add sorted entries to the model
+        model.addAttribute("endpointList", endpointList);
+
+        return new ModelAndView("showendpoints");
+    }
+
+    @GetMapping("/showendpoints_")
+    public ModelAndView showEndpoints_(Model model, HttpServletRequest request)
+    {
+        logger.info("◇ 클래스:함수명 | {}:{} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+
+        // 동적으로 현재 세션에 걸려있는 도메인 주소 가져오기
+        String baseDomain = request.getServerName() + ":" + request.getServerPort();
+        model.addAttribute("baseDomain", baseDomain);
+
+        Map<String, List<String>> endpointMap = new HashMap<>();
 
         // handlerMapping을 사용하여 endpointMap 채우기
         handlerMapping.getHandlerMethods().forEach((key, value) ->
         {
-                /*
-        String strKey = key.getPatternValues().toString().replaceAll("\\[|\\]", "");
-        String strValue = value.getMethod().toString();
-        String httpMethod = key.getMethodsCondition().getMethods().iterator().next().name();
-
-        // Map에 해당 HTTP 메서드에 대한 정보를 추가
-        endpointMap.computeIfAbsent(strKey, k -> new HashMap<>()).put(httpMethod, strValue);
- 
-    */
             String strKey = key.getPatternValues().toString().replaceAll("\\[|\\]", "");
             String strValue = value.getMethod().toString();
+            String requestMethod = key.getMethodsCondition().getMethods().toString();
 
-            endpointMap.put(strKey, strValue);
+            // Create a list for each endpoint containing the method and value
+            List<String> methodList = endpointMap.computeIfAbsent(strKey, k -> new ArrayList<>());
+            methodList.add(requestMethod + ": " + strValue);
         });
 
-        // Map의 엔트리를 리스트로 변환하여 정렬 가능하도록 함
-        List<Map.Entry<String, String>> sortedEntries = new ArrayList<>(endpointMap.entrySet());
+        // Transform the map into a list of entries
+        List<Map.Entry<String, List<String>>> sortedEntries = new ArrayList<>(endpointMap.entrySet());
 
-        // 키(strKey)를 기준으로 정렬
+        // Sort the entries based on the endpoint key
         Collections.sort(sortedEntries, Comparator.comparing(Map.Entry::getKey));
 
-        // 정렬된 엔트리 출력
+        // Log and print the sorted entries
         sortedEntries.forEach(entry ->
         {
             String strKey = entry.getKey();
-            String strValue = entry.getValue();
+            List<String> methodList = entry.getValue();
 
-            logger.info("◇ {} : {}", strKey, strValue);
+            logger.info("◇ {} : {}", strKey, methodList);
         });
 
-        // 정렬된 엔트리를 모델에 추가
+        // Add sorted entries to the model
         model.addAttribute("endpointMap", sortedEntries);
 
         return new ModelAndView("showendpoints");
