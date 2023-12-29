@@ -14,7 +14,7 @@
 	<style>
 		table {
 			border-collapse: collapse;
-			width: 100%;
+			width: auto;
 		}
 		
 		th, td {
@@ -35,16 +35,21 @@
 	<table border="1">
 		<thead>
 			<tr>
+				<th>Method</th>
 				<th>Endpoint Pattern</th>
-				<th>Request Method</th>
-				<th>Request Info</th>
+				<th colspan="4">Request Info</th>
 			</tr>
 		</thead>
 		<tbody>
-			<!-- Iterate over the entries -->
             <tr th:each="endpointArray : ${endpointList}">
-                <!-- Display each item in the endpointArray -->
-                <td th:each="item : ${endpointArray}" th:text="${item}"></td>
+                <td th:text="${endpointArray[0]}"></td>
+				<td>
+				    <a th:href="@{(${endpointArray[1]})}" th:text="${endpointArray[1]}">Link Text</a>
+				</td>
+				<td th:text="${endpointArray[2]}"></td>
+				<td th:text="${endpointArray[3]}"></td>
+				<td th:text="${endpointArray[4]}"></td>
+				<td th:text="${endpointArray[5]}"></td>
             </tr>
 		</tbody>
 	</table>
