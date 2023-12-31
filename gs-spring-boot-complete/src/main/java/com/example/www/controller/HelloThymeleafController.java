@@ -11,7 +11,7 @@ import com.example.www.ClassUtils;
 @Controller
 public class HelloThymeleafController
 {
-	private final Logger logger = LogManager.getLogger(getClass().getName());
+    private final Logger logger = LogManager.getLogger(getClass().getName());
 
     @GetMapping(value = "/HelloThymeleaf", produces = "text/html")
     public String hello(Model model)
