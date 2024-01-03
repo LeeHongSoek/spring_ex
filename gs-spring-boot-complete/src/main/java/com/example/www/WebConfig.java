@@ -10,9 +10,9 @@ public class WebConfig implements WebMvcConfigurer
 {
 
     @Bean
-    LoggingInterceptor loggingInterceptor()
+    HandlerInterceptorImpl loggingInterceptor()
     {
-        return new LoggingInterceptor();
+        return new HandlerInterceptorImpl();
     }
 
     @Override

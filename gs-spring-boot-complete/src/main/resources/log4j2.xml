@@ -33,8 +33,8 @@
 	<Loggers>
 		<Root level="info">
 			<AppenderRef ref="Console" />
-			<AppenderRef ref="File_log" />
-			<AppenderRef ref="File_loggz" />
+			<!-- AppenderRef ref="File_log" />
+			<AppenderRef ref="File_loggz" / -->
 		</Root>
 		<logger name="org.hibernate.orm.results.loading.entity" level="debug" />
         <logger name="org.hibernate.orm.results" level="debug" />
