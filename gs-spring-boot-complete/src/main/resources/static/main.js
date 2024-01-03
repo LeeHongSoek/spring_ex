@@ -1,5 +1,5 @@
 window.onload = function() {
-  var table = document.querySelector('table');
+  var table = document.querySelector('table.show_endpoint');
   var rows = Array.from(table.rows);
   var groups = rows.reduce((groups, row) => {
     var key = row.cells[0].textContent;
