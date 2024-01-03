@@ -11,6 +11,36 @@
 	<!-- https://www.youtube.com/watch?v=A109ZrIHPiQ 참조 -->
 	<script src="http://localhost:35729/livereload.js"></script>
 	
+	<script type="text/javascript">
+	
+	window.onload = function() {
+		  var table = document.querySelector('table');
+		  var rows = Array.from(table.rows);
+		  var groups = rows.reduce((groups, row) => {
+		    var key = row.cells[0].textContent;
+		    if (!groups[key]) {
+		      groups[key] = [];
+		    }
+		    groups[key].push(row);
+		    return groups;
+		  }, {});
+
+		  Object.values(groups).forEach((group, index) => {
+		    var firstRow = group[0];
+		    firstRow.cells[0].rowSpan = group.length;
+		    group.slice(1).forEach(row => {
+		      row.deleteCell(0);
+		    });
+
+		    // 배경색 설정
+		    var color = index % 2 === 0 ? 'f2f2f2' : '#f5f5f5';
+		    group.forEach(row => {
+		      row.style.backgroundColor = color;
+		    });
+		  });
+		};	
+	</script>
+	
 	<style>
 		table {
 			border-collapse: collapse;
@@ -35,20 +65,27 @@
 	<table border="1">
 		<thead>
 			<tr>
+				<th>Endpoint</th>
 				<th>Method</th>
-				<th>Endpoint Pattern</th>
-				<th colspan="4">Request Info</th>
+				<th>Class</th>
+				<th>Function</th>
+				<th>Return Type</th>
+				<th>Parameter</th>
 			</tr>
 		</thead>
 		<tbody>
             <tr th:each="endpointArray : ${endpointList}">
-                <td th:text="${endpointArray[0]}"></td>
 				<td>
-				    <a th:href="@{(${endpointArray[1]})}" th:text="${endpointArray[1]}">Link Text</a>
+				    <a th:href="@{(${endpointArray[0]})}" th:text="${endpointArray[0]}"></a>
 				</td>
-				<td th:text="${endpointArray[2]}"></td>
-				<td th:text="${endpointArray[3]}"></td>
-				<td th:text="${endpointArray[4]}"></td>
+                <td th:text="${endpointArray[1]}"></td>
+				<td>
+				    <u th:text="${endpointArray[2]}"></u>
+				</td>
+				<td th:text="${endpointArray[3]}"></td>				
+				<td>
+				    <u th:text="${endpointArray[4]}"></u>
+				</td>
 				<td th:text="${endpointArray[5]}"></td>
             </tr>
 		</tbody>

@@ -62,8 +62,8 @@ public class ShowInfoController
             
             if ("com.example.www.controller".equals(parsedInfo.packageName))
             {
-                String[] endpointArray = { requestMethod
-                                         , strKey
+                String[] endpointArray = { strKey
+                                         , requestMethod
                                          //, parsedInfo.accessModifier
                                          //, parsedInfo.packageName
                                          , parsedInfo.className
@@ -75,7 +75,7 @@ public class ShowInfoController
             }
         });
 
-        Collections.sort(endpointList, Comparator.comparing(endpointArray -> endpointArray[1]));
+        Collections.sort(endpointList, Comparator.comparing(endpointArray -> endpointArray[0]));
 
         endpointList.forEach(endpointArray -> logger.info("◇ {} : {}, {}: {}", endpointArray[1], endpointArray[0], endpointArray[2], endpointArray[4]));
 
