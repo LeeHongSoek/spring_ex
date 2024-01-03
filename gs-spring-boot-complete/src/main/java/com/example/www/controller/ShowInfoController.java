@@ -77,7 +77,7 @@ public class ShowInfoController
 
         Collections.sort(endpointList, Comparator.comparing(endpointArray -> endpointArray[0]));
 
-        endpointList.forEach(endpointArray -> logger.info("◇ {} {} : {} / {}", endpointArray[0], endpointArray[1], endpointArray[2], endpointArray[4]));
+        endpointList.forEach(endpointArray -> logger.info("{} {} : {} / {}", endpointArray[0], endpointArray[1], endpointArray[2], endpointArray[4]));
 
         // Add sorted entries to the model
         model.addAttribute("endpointList", endpointList);
