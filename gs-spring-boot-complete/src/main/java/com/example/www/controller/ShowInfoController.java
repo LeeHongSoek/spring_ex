@@ -42,7 +42,7 @@ public class ShowInfoController
     @GetMapping("/showendpoints")
     public ModelAndView showEndpoints(Model model, HttpServletRequest request)
     {
-        logger.info("◇ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
 
         // 동적으로 현재 세션에 걸려있는 도메인 주소 가져오기
         String baseDomain = request.getServerName() + ":" + request.getServerPort();
@@ -128,7 +128,7 @@ public class ShowInfoController
     @GetMapping("/showbeans")
     public String showBeans(Model model)
     {
-        logger.info("◇ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
 
         BeansDescriptor beansDescriptor = beansEndpoint.beans();
 
