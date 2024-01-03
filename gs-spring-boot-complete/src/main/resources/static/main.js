@@ -1,4 +1,6 @@
+
 window.onload = function() {
+  
   var table = document.querySelector('table.show_endpoint');
   var rows = Array.from(table.rows);
   var groups = rows.reduce((groups, row) => {
@@ -22,4 +24,5 @@ window.onload = function() {
       row.style.backgroundColor = color;
     });
   });
+  
 };
