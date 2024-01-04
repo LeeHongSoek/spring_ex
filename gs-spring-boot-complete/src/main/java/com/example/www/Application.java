@@ -28,7 +28,7 @@ public class Application
     {
         return args ->
         {
-            logger.info("□ {} ", "com.example.www 패키지에 있는 빈들을 검사해 보겠습니다.");
+            logger.info("■ {} ", "com.example.www 패키지에 있는 빈들을 검사해 보겠습니다.");
 
             // com.example.www 패키지 아래의 모든 빈을 가져옵니다.
             Map<String, Object> beansInPackage = ctx.getBeansOfType(Object.class);
@@ -41,7 +41,7 @@ public class Application
                 // 특정 패키지에 속한 빈들만 출력합니다.
                 if (beanInstance.getClass().getPackage().getName().startsWith("com.example."))
                 {
-                    logger.info("빈: {} ", ClassUtils.getShtClassNm(beanInstance.getClass()) + " : " + beanName);
+                    logger.info("□ {} ", ClassUtils.getShtClassNm(beanInstance.getClass()) + " : " + beanName);
                 }
             }
         };
@@ -64,7 +64,7 @@ com.example.www.beans-to-inspect=bean1,bean2,bean3
 
             for (String beanName : beansToInspect) {
                 Object beanInstance = ctx.getBean(beanName);
-                logger.info("빈: {} ", ClassUtils.getShortClassName(beanInstance.getClass()) + " : " + beanName);
+                logger.info("□ {} ", ClassUtils.getShortClassName(beanInstance.getClass()) + " : " + beanName);
             }
         };
     }

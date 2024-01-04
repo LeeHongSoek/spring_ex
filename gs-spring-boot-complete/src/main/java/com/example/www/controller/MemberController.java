@@ -17,7 +17,7 @@ import com.example.www.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/api/members")
+@RequestMapping("/h2/members")
 public class MemberController
 {
     private final MemberService memberService;
