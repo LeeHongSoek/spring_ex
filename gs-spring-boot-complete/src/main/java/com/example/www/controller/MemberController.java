@@ -34,7 +34,8 @@ public class MemberController
     @GetMapping
     public List<Member> getAllMembers(HttpServletRequest request )
     {
-        logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("--------------------------------------------------------------------------------------");
 
         return memberService.getAllMembers();
     }
@@ -42,7 +43,8 @@ public class MemberController
     @GetMapping("/{id}")
     public Member getMemberById(@PathVariable Long id)
     {
-        logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("--------------------------------------------------------------------------------------");
 
         return memberService.getMemberById(id);
     }
@@ -50,7 +52,8 @@ public class MemberController
     @PostMapping
     public Member createMember(@RequestBody Member member)
     {
-        logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("--------------------------------------------------------------------------------------");
 
         return memberService.createMember(member);
     }
@@ -58,7 +61,8 @@ public class MemberController
     @PutMapping("/{id}")
     public Member updateMember(@PathVariable Long id, @RequestBody Member member)
     {
-        logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("--------------------------------------------------------------------------------------");
 
         return memberService.updateMember(id, member);
     }
@@ -66,7 +70,8 @@ public class MemberController
     @DeleteMapping("/{id}")
     public void deleteMember(@PathVariable Long id)
     {
-        logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.info("--------------------------------------------------------------------------------------");
 
         memberService.deleteMember(id);
     }

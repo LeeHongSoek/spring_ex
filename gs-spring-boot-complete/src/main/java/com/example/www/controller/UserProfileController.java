@@ -41,7 +41,8 @@ public class UserProfileController
     @GetMapping("/user/{id}")
     public UserProfile getUserProfile(@PathVariable("id") String id)
     {
-    	logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("--------------------------------------------------------------------------------------");
     	
         return userProfileMapper.getUserProfile(id);
     }
@@ -49,7 +50,8 @@ public class UserProfileController
     @GetMapping("/user/all")
     public List<UserProfile> getUserProfileList()
     {
-    	logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("--------------------------------------------------------------------------------------");
     	
         return userProfileMapper.getUserProfileList();
     }
@@ -57,7 +59,8 @@ public class UserProfileController
     @PutMapping("/user/{id}")
     public void putUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address)
     {
-    	logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("--------------------------------------------------------------------------------------");
     	
         userProfileMapper.insertUserProfile(id, name, phone, address);
     }
@@ -65,7 +68,8 @@ public class UserProfileController
     @PostMapping("/user/{id}")
     public void postUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address)
     {
-    	logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("--------------------------------------------------------------------------------------");
     	
         userProfileMapper.updateUserProfile(id, name, phone, address);
     }
@@ -73,7 +77,8 @@ public class UserProfileController
     @DeleteMapping("/user/{id}")
     public void deleteUserProfile(@PathVariable("id") String id)
     {
-    	logger.info("▷ 클래스:함수명 |  {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
+    	logger.info("--------------------------------------------------------------------------------------");
     	
         userProfileMapper.deleteUserProfile(id);
     }
