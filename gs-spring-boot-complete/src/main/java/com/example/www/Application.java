@@ -28,10 +28,7 @@ public class Application
     {
         return args ->
         {
-            logger.info("클래스:함수명 | ▷ {} : {} ", ClassUtils.getShtClassNm(getClass()), Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.info("--------------------------------------------------------------------------------------");
-
-            logger.info("{} ", "com.example.www 패키지에 있는 빈들을 검사해 보겠습니다.");
+            logger.info("□ {} ", "com.example.www 패키지에 있는 빈들을 검사해 보겠습니다.");
 
             // com.example.www 패키지 아래의 모든 빈을 가져옵니다.
             Map<String, Object> beansInPackage = ctx.getBeansOfType(Object.class);
