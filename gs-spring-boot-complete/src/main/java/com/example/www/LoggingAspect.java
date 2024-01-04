@@ -18,8 +18,8 @@ public class LoggingAspect
     {
         // JoinPoint를 이용하여 메서드 서명 출력
         //logger.info("{},{}", joinPoint.getTarget().toString(), joinPoint.getArgs().toString());
-        logger.info("웹반응   |   ▷ {} ", joinPoint.getSignature().toShortString());
-        //logger.info("웹반응    |   ▷ {} ", joinPoint.getSignature().toString());
+        //logger.info("웹반응   |   ▷ {} ", joinPoint.getSignature().toShortString());
+        logger.info("웹반응   |   ▷ {} ", joinPoint.getSignature().toString());
         logger.info("--------------------------------------------------------------------------------------");
     }
 }
