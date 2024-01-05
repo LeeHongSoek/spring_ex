@@ -26,7 +26,7 @@ public class HandlerInterceptorImpl implements HandlerInterceptor
             {
                 // 요청이 @RequestMapping에 의해 처리되는 경우에만 로그 출력
                 logger.info("======================================================================================");                
-                logger.info("웹요청   |  ◀  [{}] {}", request.getMethod(), request.getRequestURI());
+                logger.info("웹요청    | ◀  [{}] {}", request.getMethod(), request.getRequestURI());
             }
         }
 

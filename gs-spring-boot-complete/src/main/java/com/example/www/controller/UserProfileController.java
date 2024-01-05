@@ -47,8 +47,8 @@ public class UserProfileController
         return userProfileMapper.getUserProfileList();
     }
 
-    @PutMapping("/user/{id}")
-    public void putUserProfile(@PathVariable("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address)
+    @PutMapping("/user")
+    public void putUserProfile(@RequestParam("id") String id, @RequestParam("name") String name, @RequestParam("phone") String phone, @RequestParam("address") String address)
     {
         userProfileMapper.insertUserProfile(id, name, phone, address);
     }
