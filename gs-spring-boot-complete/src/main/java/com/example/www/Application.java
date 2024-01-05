@@ -2,7 +2,6 @@ package com.example.www;
 
 import java.util.Map;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -16,12 +15,12 @@ import org.springframework.context.annotation.Bean;
 public class Application
 {
 
+    private static final Logger logger = LoggerFactory.getLogger(Application.class);
+
     public static void main(String[] args)
     {
         SpringApplication.run(Application.class, args);
     }
-
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
     @Bean
     CommandLineRunner commandLineRunner(ApplicationContext ctx)
@@ -46,10 +45,10 @@ public class Application
             }
         };
     }
-
     
+}
 /*
- 
+
 # application.properties
 
 # com.example.www 패키지에 속한 빈들의 이름을 설정
@@ -100,4 +99,3 @@ CommandLineRunner를 사용하여 빈들을 검색하고 출력하는 로직은 
 
 */
     
-}

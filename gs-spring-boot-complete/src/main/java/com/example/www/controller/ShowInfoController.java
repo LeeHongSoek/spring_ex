@@ -6,8 +6,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.actuate.beans.BeansEndpoint;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
-import com.example.www.ClassUtils;
 import com.example.www.vo.BeanInfo;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,7 +27,6 @@ import jakarta.servlet.http.HttpServletRequest;
 public class ShowInfoController
 {
 
-    private final Logger logger = LogManager.getLogger(getClass().getName());
     private final RequestMappingHandlerMapping handlerMapping;
 
     public ShowInfoController(@Qualifier("requestMappingHandlerMapping") RequestMappingHandlerMapping handlerMapping)

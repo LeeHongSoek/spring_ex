@@ -1,10 +1,7 @@
 package com.example.www.controller;
 
 import java.util.List;
-import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.www.ClassUtils;
 import com.example.www.mapper.UserProfileMapper;
 import com.example.www.vo.UserProfile;
 /*
@@ -32,7 +28,6 @@ CREATE TABLE `UserProfile` (
 public class UserProfileController
 {
 
-    private final Logger logger = LogManager.getLogger(getClass().getName());
     private UserProfileMapper userProfileMapper;
     
     public UserProfileController(UserProfileMapper userProfileMapper)

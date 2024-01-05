@@ -1,7 +1,7 @@
 package com.example.www;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect
 {
-    private final Logger logger = LogManager.getLogger(getClass().getName());
+    private static final Logger logger = LoggerFactory.getLogger(HandlerInterceptorImpl.class);
 
     @Before("execution(* com.example.www.controller.*.*(..))")
     public void logBefore(JoinPoint joinPoint)
