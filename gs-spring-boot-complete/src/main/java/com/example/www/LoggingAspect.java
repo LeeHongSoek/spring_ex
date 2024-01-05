@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect
 {
+    
     private static final Logger logger = LoggerFactory.getLogger(HandlerInterceptorImpl.class);
 
     @Before("execution(* com.example.www.controller.*.*(..))")
