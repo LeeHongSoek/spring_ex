@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <mappers>
+        <mapper resource="com/example/www/mapper/UserProfileMapper.xml"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,9 @@
+<mapper namespace="com.example.www.mapper.UserProfileMapper">
+
+    <select id="getUserProfileById" resultType="com.example.www.vo.UserProfile">
+        SELECT * FROM UserProfile WHERE id = #{id}
+    </select>
+
+    <!-- 다른 쿼리들도 추가 가능 -->
+
+</mapper>

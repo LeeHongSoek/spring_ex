@@ -38,7 +38,8 @@ public class UserProfileController
     @GetMapping("/user/{id}")
     public UserProfile getUserProfile(@PathVariable("id") String id)
     {
-        return userProfileMapper.getUserProfile(id);
+        //return userProfileMapper.getUserProfile(id);
+        return userProfileMapper.getUserProfileById(id);
     }
 
     @GetMapping("/user/all")

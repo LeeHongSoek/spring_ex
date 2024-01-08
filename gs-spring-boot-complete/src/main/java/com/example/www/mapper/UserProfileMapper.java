@@ -14,6 +14,9 @@ import com.example.www.vo.UserProfile;
 @Mapper 
 public interface UserProfileMapper
 {
+    
+    UserProfile getUserProfileById(String id);
+    
     @Select("SELECT * FROM UserProfile WHERE id=#{id}")
     UserProfile getUserProfile(@Param("id") String id);
 
